@@ -242,9 +242,35 @@
         }
 
         .example-thumb {
-            background: linear-gradient(135deg, #1d4ed8, #7c3aed);
-            height: 140px;
-        }
+    position: relative;
+    height: 140px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+/* Soft gradient overlay so text still feels “Verse” */
+.example-thumb::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(29, 78, 216, 0.3), rgba(124, 58, 237, 0.5));
+}
+
+/* Card-specific images */
+.example-thumb.neon-exodus {
+    background-image: url("neon-exodus.jpg");
+}
+
+.example-thumb.artist-launch {
+    background-image: url("artist-launch.jpg");
+}
+
+.example-thumb.product-spotlight {
+    background-image: url("product-spotlight.jpg");
+}
+
 
         .example-body {
             padding: 14px 16px 16px;
@@ -615,28 +641,31 @@
             <p class="section-subtitle">Example types of content your investors and early users will immediately understand.</p>
 
             <div class="example-grid">
-                <div class="example-card">
-                    <div class="example-thumb"></div>
-                    <div class="example-body">
-                        <div class="example-title">“Neon Exodus” — Sci-Fi Short</div>
-                        <div class="example-meta">45s • Cinematic 2.39:1 • Generated in 8 minutes</div>
-                    </div>
-                </div>
-                <div class="example-card">
-                    <div class="example-thumb"></div>
-                    <div class="example-body">
-                        <div class="example-title">Artist Launch — Music Video</div>
-                        <div class="example-meta">30s • Stylized performance + VFX • TikTok + Reels ready</div>
-                    </div>
-                </div>
-                <div class="example-card">
-                    <div class="example-thumb"></div>
-                    <div class="example-body">
-                        <div class="example-title">Product Spotlight — Brand Ad</div>
-                        <div class="example-meta">20s • UGC + 3D hybrid • Built for paid social</div>
-                    </div>
-                </div>
-            </div>
+    <div class="example-card">
+        <div class="example-thumb neon-exodus"></div>
+        <div class="example-body">
+            <div class="example-title">“Neon Exodus” — Sci-Fi Short</div>
+            <div class="example-meta">45s • Cinematic 2.39:1 • Generated in 8 minutes</div>
+        </div>
+    </div>
+
+    <div class="example-card">
+        <div class="example-thumb artist-launch"></div>
+        <div class="example-body">
+            <div class="example-title">Artist Launch — Music Video</div>
+            <div class="example-meta">30s • Stylized performance + VFX • TikTok + Reels ready</div>
+        </div>
+    </div>
+
+    <div class="example-card">
+        <div class="example-thumb product-spotlight"></div>
+        <div class="example-body">
+            <div class="example-title">Product Spotlight — Brand Ad</div>
+            <div class="example-meta">20s • UGC + 3D hybrid • Built for paid social</div>
+        </div>
+    </div>
+</div>
+
         </section>
 
         <!-- USE CASES -->
