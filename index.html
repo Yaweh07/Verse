@@ -21,6 +21,7 @@
       color: #fff;
       min-height: 100vh;
       padding: 20px;
+      overflow-x: hidden;
     }
 
     .container {
@@ -595,10 +596,150 @@
         padding-top: 30px;
       }
     }
+
+    /* === THANK-YOU FULLSCREEN OVERLAY + SHARE BUTTONS === */
+
+    #thankYouScreen {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at 35% 20%, #7f29ff 0%, #06071A 50%, #000 100%);
+      color: #fff;
+      z-index: 9999;
+      padding: 40px 20px;
+      text-align: center;
+      overflow-y: auto;
+      animation: fadeIn 0.7s ease forwards;
+    }
+
+    #thankYouScreenInner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    #thankYouScreen img {
+      width: 150px;
+      margin-bottom: 20px;
+      filter: drop-shadow(0 0 22px rgba(0,224,255,0.45));
+    }
+
+    #thankYouScreen h1 {
+      font-size: 2.6rem;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      font-weight: 900;
+      background: linear-gradient(135deg, #00e0ff, #7c3aed);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    #thankYouScreen p {
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      margin-bottom: 24px;
+      line-height: 1.7;
+    }
+
+    .thank-tagline {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 28px;
+      background: linear-gradient(135deg, #00e0ff, #a855f7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .thank-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 360px;
+      margin: 0 auto;
+    }
+
+    .copy-btn {
+      padding: 14px;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, #00e0ff, #7928ca);
+      color: #fff;
+      font-size: 1.05rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .copy-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 45px rgba(0,224,255,0.35);
+    }
+
+    .twitter-btn {
+      padding: 13px;
+      border-radius: 999px;
+      border: 2px solid #1d9bf0;
+      background: transparent;
+      color: #1d9bf0;
+      font-size: 1.05rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .twitter-btn:hover {
+      background: rgba(29,155,240,0.18);
+      transform: translateY(-2px);
+    }
+
+    .copied-text {
+      font-size: 0.9rem;
+      color: #22c55e;
+      margin-top: 4px;
+      display: none;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(1.02); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+
+    @media (max-width: 640px) {
+      #thankYouScreen h1 {
+        font-size: 2.1rem;
+      }
+      .thank-tagline {
+        font-size: 1.15rem;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="container">
+
+  <!-- FULLSCREEN THANK-YOU OVERLAY -->
+  <div id="thankYouScreen">
+    <div id="thankYouScreenInner">
+      <img src="verse-logo.png" alt="VerseCX Logo" />
+      <h1>The studio is yours now.<br />Your vision. Your universe.</h1>
+      <p>
+        You're officially on the Verse waitlist. We’ll send early feature drops, updates,
+        and private beta invites as we open new waves.
+      </p>
+      <div class="thank-tagline">
+        Share Verse with creators who should have a studio of their own.
+      </div>
+      <div class="thank-buttons">
+        <button class="copy-btn" onclick="copyLink()">Copy waitlist link</button>
+        <span id="copiedMsg" class="copied-text">Link copied!</span>
+
+        <button class="twitter-btn" onclick="shareTwitter()">
+          Share on Twitter (X)
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN PAGE -->
+  <div class="container" id="mainPage">
     <!-- HEADER / HERO -->
     <div class="logo">
       <img src="verse-logo.png" alt="Verse Logo" />
@@ -1047,6 +1188,63 @@
       const el = document.getElementById("waitlistCounter");
       if (el) el.textContent = "🔥 " + (base + extra);
     })();
+
+    // COPY LINK
+    function copyLink() {
+      navigator.clipboard.writeText("https://versecxwaitlist.netlify.app/");
+      const msg = document.getElementById("copiedMsg");
+      if (msg) {
+        msg.style.display = "block";
+        setTimeout(() => {
+          msg.style.display = "none";
+        }, 1800);
+      }
+    }
+
+    // SHARE TO TWITTER
+    function shareTwitter() {
+      const text =
+        encodeURIComponent(
+          "I just joined the @VerseCXApp waitlist — an AI-native creative studio where you create films, music videos, ads & universes straight from your browser. Join me:"
+        );
+      const url = encodeURIComponent("https://versecxwaitlist.netlify.app/");
+      window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, "_blank");
+    }
+
+    // FORM SUBMIT → SHOW THANK YOU SCREEN AND STILL SEND TO NETLIFY
+    const form = document.getElementById("form");
+    const mainPage = document.getElementById("mainPage");
+    const thankYouScreen = document.getElementById("thankYouScreen");
+    const submitBtn = document.getElementById("submitBtn");
+
+    if (form) {
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.textContent = "Joining...";
+        }
+
+        const formData = new FormData(form);
+
+        fetch("/", {
+          method: "POST",
+          body: formData
+        })
+          .then(() => {
+            if (mainPage) mainPage.style.display = "none";
+            if (thankYouScreen) thankYouScreen.style.display = "block";
+          })
+          .catch(() => {
+            if (submitBtn) {
+              submitBtn.disabled = false;
+              submitBtn.textContent = "🚀 Join Early Access";
+            }
+            alert("Something went wrong. Please try again.");
+          });
+      });
+    }
   </script>
 </body>
 </html>
