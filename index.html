@@ -1,919 +1,1038 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verse - AI-Native Creative Platform | Join Waitlist</title>
-    <meta name="description" content="Where humanity and AI co-direct. Create films, music, and content with AI. Join thousands of creators in early access.">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: radial-gradient(circle at top, #111827 0%, #020617 45%, #020617 100%);
-            color: #fff;
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px 80px;
-        }
-
-        /* HEADER / LOGO */
-
-        .logo {
-            text-align: center;
-            margin-bottom: 24px;
-        }
-
-        .logo img {
-            display: block;
-            margin: 0 auto 16px;
-            width: 120px;
-        }
-
-        .logo h1 {
-            font-size: 3.2rem;
-            background: linear-gradient(135deg, #00e0ff, #7928ca);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 900;
-            letter-spacing: -1px;
-        }
-
-        .tagline {
-            font-size: 1.1rem;
-            color: #94a3b8;
-            text-align: center;
-            margin-bottom: 40px;
-            line-height: 1.6;
-        }
-
-        /* HERO */
-
-        .hero {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .hero h2 {
-            font-size: 2.4rem;
-            margin-bottom: 16px;
-            line-height: 1.25;
-        }
-
-        .hero .highlight {
-            background: linear-gradient(135deg, #00e0ff, #7928ca);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero p {
-            font-size: 1.05rem;
-            color: #cbd5e1;
-            margin-bottom: 24px;
-            line-height: 1.7;
-        }
-
-        .hero-note {
-            font-size: 0.9rem;
-            color: #64748b;
-        }
-
-        /* SOCIAL PROOF / STATS */
-
-        .social-proof {
-            background: rgba(0, 224, 255, 0.05);
-            border: 1px solid rgba(0, 224, 255, 0.25);
-            border-radius: 999px;
-            padding: 10px 22px;
-            margin: 0 auto 36px;
-            text-align: center;
-            display: inline-block;
-        }
-
-        .social-proof span {
-            color: #22c55e;
-            font-weight: 600;
-        }
-
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-            margin-bottom: 40px;
-        }
-
-        .stat {
-            text-align: center;
-            padding: 22px 16px;
-            background: rgba(15, 23, 42, 0.9);
-            border-radius: 16px;
-            border: 1px solid rgba(148, 163, 184, 0.25);
-        }
-
-        .stat-number {
-            font-size: 2.2rem;
-            font-weight: bold;
-            background: linear-gradient(135deg, #00e0ff, #7928ca);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 6px;
-        }
-
-        .stat-label {
-            color: #94a3b8;
-            font-size: 0.9rem;
-        }
-
-        /* SECTION TITLES */
-
-        .section-title {
-            font-size: 1.6rem;
-            margin-bottom: 12px;
-            text-align: center;
-        }
-
-        .section-subtitle {
-            font-size: 0.98rem;
-            color: #94a3b8;
-            text-align: center;
-            margin-bottom: 24px;
-        }
-
-        /* DEMO VIDEO */
-
-        .demo-section {
-            margin-bottom: 48px;
-        }
-
-        /* hero-style 16:9 video */
-        .demo-video-wrapper {
-            position: relative;
-            max-width: 900px;
-            margin: 0 auto;
-            padding-bottom: 56.25%; /* 16:9 */
-            height: 0;
-            border-radius: 18px;
-            overflow: hidden;
-            border: 1px solid rgba(148, 163, 184, 0.35);
-            box-shadow: 0 24px 80px rgba(15, 23, 42, 0.9);
-        }
-
-        .demo-video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
-        .demo-hint {
-            text-align: center;
-            margin-top: 10px;
-            font-size: 0.9rem;
-            color: #64748b;
-        }
-
-        /* FEATURES */
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 24px;
-            margin-bottom: 48px;
-        }
-
-        .feature {
-            background: #020617;
-            border: 1px solid #1e293b;
-            border-radius: 16px;
-            padding: 22px;
-            text-align: left;
-            transition: all 0.25s ease;
-        }
-
-        .feature:hover {
-            border-color: #00e0ff;
-            box-shadow: 0 18px 50px rgba(15, 23, 42, 0.9);
-            transform: translateY(-3px);
-        }
-
-        .feature-icon {
-            font-size: 1.8rem;
-            margin-bottom: 12px;
-        }
-
-        .feature h3 {
-            font-size: 1.15rem;
-            margin-bottom: 8px;
-            color: #e5e7eb;
-        }
-
-        .feature p {
-            color: #94a3b8;
-            font-size: 0.96rem;
-            line-height: 1.6;
-        }
-
-        /* EXAMPLE OUTPUTS */
-
-        .examples {
-            margin-bottom: 48px;
-        }
-
-        .example-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
-        }
-
-        .example-card {
-            background: #020617;
-            border-radius: 16px;
-            border: 1px solid #1e293b;
-            overflow: hidden;
-        }
-
-        .example-thumb {
-            position: relative;
-            height: 180px; /* taller so the LIFE ad reads clearly */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            overflow: hidden;
-        }
-
-        /* Soft gradient overlay so text still feels “Verse” */
-        .example-thumb::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(29, 78, 216, 0.3), rgba(124, 58, 237, 0.5));
-        }
-
-        /* Card-specific images */
-        .example-thumb.neon-exodus {
-            background-image: url("neon-exodus.jpg");
-        }
-
-        .example-thumb.artist-launch {
-            background-image: url("artist-launch.jpg");
-        }
-
-        .example-thumb.product-spotlight {
-            background-image: url("product-spotlight.jpg");
-            background-position: center top; /* pull “Elevate Your Style” into frame */
-        }
-
-        .example-body {
-            padding: 14px 16px 16px;
-        }
-
-        .example-title {
-            font-size: 0.98rem;
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
-
-        .example-meta {
-            font-size: 0.85rem;
-            color: #9ca3af;
-        }
-
-        /* USE CASES */
-
-        .usecases {
-            margin-bottom: 52px;
-        }
-
-        .usecases-heading {
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            font-size: 0.85rem;
-            color: #64748b;
-            text-align: center;
-            margin-bottom: 8px;
-        }
-
-        .usecases h2.section-title {
-            margin-bottom: 8px;
-        }
-
-        .usecase-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 16px;
-        }
-
-        .usecase {
-            background: rgba(15, 23, 42, 0.9);
-            border-radius: 14px;
-            border: 1px dashed rgba(148, 163, 184, 0.5);
-            padding: 16px 18px;
-            font-size: 0.95rem;
-        }
-
-        .usecase strong {
-            display: block;
-            margin-bottom: 4px;
-            color: #e5e7eb;
-        }
-
-        .usecase span.tag {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            color: #a5b4fc;
-        }
-
-        /* WAITLIST FORM */
-
-        .waitlist-form {
-            background: #020617;
-            border-radius: 18px;
-            padding: 28px 24px 30px;
-            box-shadow: 0 24px 80px rgba(15, 23, 42, 0.9);
-            margin-bottom: 50px;
-            border: 1px solid #1e293b;
-        }
-
-        .waitlist-form h2 {
-            text-align: center;
-            margin-bottom: 8px;
-            font-size: 1.6rem;
-        }
-
-        .waitlist-form p {
-            text-align: center;
-            color: #94a3b8;
-            font-size: 0.95rem;
-            margin-bottom: 22px;
-        }
-
-        .form-group {
-            margin-bottom: 16px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 6px;
-            color: #cbd5e1;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        .form-group input,
-        .form-group select {
-            width: 100%;
-            padding: 12px 13px;
-            background: #020617;
-            border: 1px solid #334155;
-            border-radius: 10px;
-            color: #fff;
-            font-size: 0.98rem;
-            transition: border-color 0.25s;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: #00e0ff;
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 13px;
-            background: linear-gradient(135deg, #00e0ff, #7928ca);
-            border: none;
-            border-radius: 999px;
-            color: #fff;
-            font-size: 1.05rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            margin-top: 4px;
-        }
-
-        .submit-btn:hover:not(:disabled) {
-            transform: translateY(-1px);
-            box-shadow: 0 15px 40px rgba(0, 224, 255, 0.35);
-        }
-
-        .submit-btn:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-            box-shadow: none;
-            transform: none;
-        }
-
-        .success-message {
-            display: none;
-            background: rgba(34, 197, 94, 0.08);
-            border: 1px solid #22c55e;
-            border-radius: 14px;
-            padding: 20px;
-            text-align: center;
-            margin-top: 18px;
-        }
-
-        .success-message.show {
-            display: block;
-            animation: slideIn 0.4s;
-        }
-
-        .success-icon {
-            font-size: 2.4rem;
-            margin-bottom: 8px;
-        }
-
-        .success-message h3 {
-            color: #22c55e;
-            font-size: 1.2rem;
-            margin-bottom: 6px;
-        }
-
-        .success-message p {
-            color: #cbd5e1;
-            font-size: 0.95rem;
-        }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* FOOTER & CTA */
-
-        .founder,
-        .faq,
-        .final-cta {
-            margin-bottom: 44px;
-        }
-
-        .founder p {
-            max-width: 700px;
-            margin: 0 auto;
-            text-align: center;
-            color: #cbd5e1;
-            line-height: 1.7;
-            font-size: 0.98rem;
-        }
-
-        .faq-list {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            margin-bottom: 14px;
-        }
-
-        .faq-item h3 {
-            font-size: 0.98rem;
-            margin-bottom: 4px;
-            color: #e5e7eb;
-        }
-
-        .faq-item p {
-            font-size: 0.9rem;
-            color: #9ca3af;
-            line-height: 1.5;
-        }
-
-        .footer {
-            text-align: center;
-            color: #6b7280;
-            padding-top: 26px;
-            border-top: 1px solid #1e293b;
-            font-size: 0.85rem;
-        }
-
-        .footer a {
-            color: #00e0ff;
-            text-decoration: none;
-        }
-
-        .footer a:hover {
-            text-decoration: underline;
-        }
-
-        .final-cta p {
-            text-align: center;
-            color: #cbd5e1;
-            margin-bottom: 10px;
-        }
-
-        .final-cta button {
-            display: inline-block;
-            padding: 10px 22px;
-            border-radius: 999px;
-            border: none;
-            background: linear-gradient(135deg, #00e0ff, #7928ca);
-            color: #fff;
-            font-weight: 600;
-            cursor: pointer;
-            font-size: 0.98rem;
-        }
-
-        .final-cta button:hover {
-            box-shadow: 0 16px 45px rgba(15, 23, 42, 1);
-            transform: translateY(-1px);
-        }
-
-        @media (max-width: 768px) {
-            .logo h1 {
-                font-size: 2.4rem;
-            }
-            .hero h2 {
-                font-size: 1.8rem;
-            }
-            .stats {
-                grid-template-columns: 1fr;
-            }
-            .demo-video-wrapper {
-                border-radius: 14px;
-            }
-            .container {
-                padding-top: 30px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verse – AI-Native Creative Platform | Join Waitlist</title>
+  <meta name="description" content="Verse is an AI-native studio where humanity and AI co-direct. Turn ideas into films, music visuals, and branded content in minutes. Join the waitlist.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: radial-gradient(circle at top, #111827 0%, #020617 45%, #020617 100%);
+      color: #fff;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+
+    /* HEADER / LOGO */
+
+    .logo {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .logo img {
+      display: block;
+      margin: 0 auto 16px;
+      width: 120px;
+    }
+
+    .logo h1 {
+      font-size: 3.2rem;
+      background: linear-gradient(135deg, #00e0ff, #7928ca);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    .tagline {
+      font-size: 1.1rem;
+      color: #94a3b8;
+      text-align: center;
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
+
+    /* HERO */
+
+    .hero {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .hero h2 {
+      font-size: 2.4rem;
+      margin-bottom: 16px;
+      line-height: 1.25;
+    }
+
+    .hero .highlight {
+      background: linear-gradient(135deg, #00e0ff, #7928ca);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: #cbd5e1;
+      margin-bottom: 24px;
+      line-height: 1.7;
+    }
+
+    .hero-note {
+      font-size: 0.9rem;
+      color: #64748b;
+    }
+
+    /* SOCIAL PROOF / STATS */
+
+    .social-proof {
+      background: rgba(0, 224, 255, 0.05);
+      border: 1px solid rgba(0, 224, 255, 0.25);
+      border-radius: 999px;
+      padding: 10px 22px;
+      margin: 0 auto 36px;
+      text-align: center;
+      display: inline-block;
+    }
+
+    .social-proof span {
+      color: #22c55e;
+      font-weight: 600;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-bottom: 40px;
+    }
+
+    .stat {
+      text-align: center;
+      padding: 22px 16px;
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 16px;
+      border: 1px solid rgba(148, 163, 184, 0.25);
+    }
+
+    .stat-number {
+      font-size: 2.2rem;
+      font-weight: bold;
+      background: linear-gradient(135deg, #00e0ff, #7928ca);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 6px;
+    }
+
+    .stat-label {
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
+
+    /* DEMO VIDEO */
+
+    .section-kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.78rem;
+      color: #64748b;
+      text-align: center;
+      margin-bottom: 6px;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    .section-subtitle {
+      font-size: 0.98rem;
+      color: #94a3b8;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .demo-section {
+      margin-bottom: 48px;
+    }
+
+    .demo-video-wrapper {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+      padding-bottom: 56.25%; /* 16:9 */
+      height: 0;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      box-shadow: 0 24px 80px rgba(15, 23, 42, 0.9);
+      background: #020617;
+    }
+
+    .demo-video-wrapper iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .demo-hint {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: #64748b;
+    }
+
+    /* FEATURES – 1x4 on desktop */
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    .feature {
+      background: #020617;
+      border: 1px solid #1e293b;
+      border-radius: 16px;
+      padding: 22px;
+      text-align: left;
+      transition: all 0.25s ease;
+    }
+
+    .feature:hover {
+      border-color: #00e0ff;
+      box-shadow: 0 18px 50px rgba(15, 23, 42, 0.9);
+      transform: translateY(-3px);
+    }
+
+    .feature-icon {
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+    }
+
+    .feature h3 {
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+      color: #e5e7eb;
+    }
+
+    .feature p {
+      color: #94a3b8;
+      font-size: 0.96rem;
+      line-height: 1.6;
+    }
+
+    /* EXAMPLE OUTPUTS */
+
+    .examples {
+      margin-bottom: 48px;
+    }
+
+    .example-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .example-card {
+      background: #020617;
+      border-radius: 16px;
+      border: 1px solid #1e293b;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .example-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(59, 130, 246, 0.7);
+      box-shadow: 0 18px 50px rgba(15, 23, 42, 0.9);
+    }
+
+    .example-thumb {
+      position: relative;
+      height: 160px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      overflow: hidden;
+    }
+
+    .example-thumb::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(15, 23, 42, 0.1),
+        rgba(124, 58, 237, 0.45)
+      );
+    }
+
+    .example-thumb.neon-exodus {
+      background-image: url("neon-exodus.jpg");
+    }
+
+    .example-thumb.artist-launch {
+      background-image: url("artist-launch.jpg");
+    }
+
+    .example-thumb.product-spotlight {
+      background-image: url("product-spotlight.jpg");
+    }
+
+    .example-body {
+      padding: 14px 16px 16px;
+    }
+
+    .example-title {
+      font-size: 0.98rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .example-meta {
+      font-size: 0.85rem;
+      color: #9ca3af;
+    }
+
+    /* AUDIENCE GRID – 2 rows x 4 cols */
+
+    .audience-wrap {
+      margin-bottom: 52px;
+    }
+
+    .audience-kicker {
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.78rem;
+      color: #64748b;
+      margin-bottom: 6px;
+    }
+
+    .audience-title {
+      text-align: center;
+      font-size: 2.1rem;
+      margin-bottom: 10px;
+    }
+
+    .audience-subtitle {
+      text-align: center;
+      font-size: 0.96rem;
+      color: #94a3b8;
+      margin-bottom: 28px;
+    }
+
+    .audience-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .audience-card {
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 16px;
+      border: 1px solid #1e293b;
+      padding: 18px 18px 20px;
+      font-size: 0.95rem;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
+    .audience-card:hover {
+      border-color: rgba(56, 189, 248, 0.7);
+      box-shadow: 0 18px 50px rgba(15, 23, 42, 0.9);
+      transform: translateY(-2px);
+    }
+
+    .audience-card strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #e5e7eb;
+      font-size: 0.98rem;
+    }
+
+    .coming-soon-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #38bdf8;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 4px;
+    }
+
+    /* WAITLIST FORM */
+
+    .waitlist-form {
+      background: #020617;
+      border-radius: 18px;
+      padding: 28px 24px 30px;
+      box-shadow: 0 24px 80px rgba(15, 23, 42, 0.9);
+      margin-bottom: 50px;
+      border: 1px solid #1e293b;
+    }
+
+    .waitlist-form h2 {
+      text-align: center;
+      margin-bottom: 8px;
+      font-size: 1.6rem;
+    }
+
+    .waitlist-form p {
+      text-align: center;
+      color: #94a3b8;
+      font-size: 0.95rem;
+      margin-bottom: 22px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      color: #cbd5e1;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 12px 13px;
+      background: #020617;
+      border: 1px solid #334155;
+      border-radius: 10px;
+      color: #fff;
+      font-size: 0.98rem;
+      transition: border-color 0.25s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: #00e0ff;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 13px;
+      background: linear-gradient(135deg, #00e0ff, #7928ca);
+      border: none;
+      border-radius: 999px;
+      color: #fff;
+      font-size: 1.05rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      margin-top: 4px;
+    }
+
+    .submit-btn:hover:not(:disabled) {
+      transform: translateY(-1px);
+      box-shadow: 0 15px 40px rgba(0, 224, 255, 0.35);
+    }
+
+    .submit-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      box-shadow: none;
+      transform: none;
+    }
+
+    .success-message {
+      display: none;
+      background: rgba(34, 197, 94, 0.08);
+      border: 1px solid #22c55e;
+      border-radius: 14px;
+      padding: 20px;
+      text-align: center;
+      margin-top: 18px;
+    }
+
+    .success-message.show {
+      display: block;
+      animation: slideIn 0.4s;
+    }
+
+    .success-icon {
+      font-size: 2.4rem;
+      margin-bottom: 8px;
+    }
+
+    .success-message h3 {
+      color: #22c55e;
+      font-size: 1.2rem;
+      margin-bottom: 6px;
+    }
+
+    .success-message p {
+      color: #cbd5e1;
+      font-size: 0.95rem;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* FOUNDER STORY & FAQ */
+
+    .founder,
+    .faq,
+    .final-cta {
+      margin-bottom: 44px;
+    }
+
+    .founder p {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+      color: #cbd5e1;
+      line-height: 1.7;
+      font-size: 0.98rem;
+    }
+
+    .faq-list {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      margin-bottom: 14px;
+    }
+
+    .faq-item h3 {
+      font-size: 0.98rem;
+      margin-bottom: 4px;
+      color: #e5e7eb;
+    }
+
+    .faq-item p {
+      font-size: 0.9rem;
+      color: #9ca3af;
+      line-height: 1.5;
+    }
+
+    /* FOOTER & FINAL CTA */
+
+    .footer {
+      text-align: center;
+      color: #6b7280;
+      padding-top: 26px;
+      border-top: 1px solid #1e293b;
+      font-size: 0.85rem;
+    }
+
+    .footer a {
+      color: #00e0ff;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    .final-cta p {
+      text-align: center;
+      color: #cbd5e1;
+      margin-bottom: 10px;
+    }
+
+    .final-cta button {
+      display: inline-block;
+      padding: 10px 22px;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, #00e0ff, #7928ca);
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.98rem;
+    }
+
+    .final-cta button:hover {
+      box-shadow: 0 16px 45px rgba(15, 23, 42, 1);
+      transform: translateY(-1px);
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 1024px) {
+      .logo h1 {
+        font-size: 2.8rem;
+      }
+
+      .hero h2 {
+        font-size: 2rem;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .features {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .example-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .audience-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        padding-top: 30px;
+      }
+
+      .logo h1 {
+        font-size: 2.3rem;
+      }
+
+      .hero h2 {
+        font-size: 1.8rem;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .example-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .audience-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .demo-video-wrapper {
+        border-radius: 14px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <div class="container">
+  <div class="container">
 
-        <!-- HEADER / HERO -->
+    <!-- HEADER / HERO -->
 
-        <div class="logo">
-            <img src="verse-logo.png" alt="Verse Logo">
-            <h1>VERSE</h1>
-        </div>
-
-        <p class="tagline">
-            An AI-native creative platform where humanity and AI co-direct.
-        </p>
-
-        <div class="hero">
-            <h2>
-                Your <span class="highlight">AI Film & Story Studio</span>.<br>
-                No Crew. No Big Budget.
-            </h2>
-            <p>
-                Turn ideas into films, music videos, and branded content in minutes.
-                Script, cast, direct, and edit with AI — all inside Verse.
-            </p>
-            <p class="hero-note">
-                Built for creators, founders, educators, and brands who want studio-quality output without studio-sized teams.
-            </p>
-        </div>
-
-        <div class="social-proof">
-            <span id="waitlistCounter">🔥 1,849</span> creators have discovered Verse this month.
-        </div>
-
-        <div class="stats">
-            <div class="stat">
-                <div class="stat-number">10m</div>
-                <div class="stat-label">Average time to first video</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">$0</div>
-                <div class="stat-label">Production costs to get started</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">∞</div>
-                <div class="stat-label">Stories & universes you can create</div>
-            </div>
-        </div>
-
-        <!-- DEMO VIDEO -->
-
-        <section class="demo-section">
-            <h2 class="section-title">See Verse in Action</h2>
-            <p class="section-subtitle">
-                24-second montage showing how Verse transforms ideas into cinematic scenes.
-            </p>
-
-            <div class="demo-video-wrapper">
-                <iframe
-                    src="https://www.youtube.com/embed/B4UFRhVolow?rel=0&modestbranding=1&controls=1"
-                    title="Verse Demo"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
-                </iframe>
-            </div>
-
-            <p class="demo-hint">
-                This preview was generated using early Verse tools. Full cinematic pipeline is coming.
-            </p>
-        </section>
-
-        <!-- FEATURES -->
-
-        <section>
-            <h2 class="section-title">Your Entire Studio in One Browser Tab</h2>
-            <p class="section-subtitle">Verse combines AI tools into a single workflow so you’re not jumping between apps.</p>
-
-            <div class="features">
-                <div class="feature">
-                    <div class="feature-icon">🎬</div>
-                    <h3>AI Director</h3>
-                    <p>Generate scripts, shot lists, and scene directions in your own voice — from short-form content to full episodes.</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">🧑‍🎤</div>
-                    <h3>AI Actors & Voices</h3>
-                    <p>Cast AI performers, clone voices, and experiment with different reads instantly without scheduling talent.</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">🎨</div>
-                    <h3>Visual Story Engine</h3>
-                    <p>Create cinematic shots, camera angles, and worlds that match your script — from lo-fi realism to stylized animation.</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">📢</div>
-                    <h3>Brand & Launch Studio</h3>
-                    <p>Turn the same assets into trailers, ads, and social clips optimized for TikTok, Instagram, YouTube, and more.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- EXAMPLE OUTPUTS -->
-
-        <section class="examples">
-            <h2 class="section-title">Made With Verse (Demo Concepts)</h2>
-            <p class="section-subtitle">Example types of content your investors and early users will immediately understand.</p>
-
-            <div class="example-grid">
-                <div class="example-card">
-                    <div class="example-thumb neon-exodus"></div>
-                    <div class="example-body">
-                        <div class="example-title">“Neon Exodus” — Sci-Fi Short</div>
-                        <div class="example-meta">45s • Cinematic 2.39:1 • Generated in 8 minutes</div>
-                    </div>
-                </div>
-
-                <div class="example-card">
-                    <div class="example-thumb artist-launch"></div>
-                    <div class="example-body">
-                        <div class="example-title">Artist Launch — Music Video</div>
-                        <div class="example-meta">30s • Country / Pop performance • TikTok + Reels ready</div>
-                    </div>
-                </div>
-
-                <div class="example-card">
-                    <div class="example-thumb product-spotlight"></div>
-                    <div class="example-body">
-                        <div class="example-title">L.I.F.E. Drop — Brand Ad</div>
-                        <div class="example-meta">20s • Streetwear hero shot + motion graphics • Built for paid social & email launches</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- WHO VERSE IS FOR -->
-
-        <section class="usecases">
-            <p class="usecases-heading">Who It Serves</p>
-            <h2 class="section-title">Who Verse Is For</h2>
-            <p class="section-subtitle">
-                If video or storytelling drives your work, Verse is your studio.
-            </p>
-
-            <div class="usecase-grid">
-                <div class="usecase">
-                    <strong>Creators & Filmmakers</strong>
-                    Pitch pilots, build universes, and ship proof-of-concept episodes without renting a single camera.
-                </div>
-                <div class="usecase">
-                    <strong>Musicians & Performers</strong>
-                    Turn tracks into performance visuals, lyric videos, and live-session edits that feel like full productions.
-                </div>
-                <div class="usecase">
-                    <strong>Founders & Brands</strong>
-                    Explain products, launch drops, and test creative with studio-quality content that you own end-to-end.
-                </div>
-                <div class="usecase">
-                    <strong>Educators & Trainers</strong>
-                    Build courses, explainers, and scenario videos where AI actors play out your lessons and real-world conflicts.
-                </div>
-                <div class="usecase">
-                    <strong>Live Hosts & Podcasters</strong>
-                    Generate show opens, highlight reels, and promo snippets for live streams, panels, and audio-first content.
-                </div>
-                <div class="usecase">
-                    <strong>Agencies & Studios</strong>
-                    Prototype ideas, pitch concepts, and deliver fast-turnaround social edits for clients without spinning up full crews.
-                </div>
-                <div class="usecase">
-                    <strong>Nonprofits & Community Orgs</strong>
-                    Tell origin stories, impact narratives, and campaign videos that reach donors and communities without big production budgets.
-                </div>
-                <div class="usecase">
-                    <strong>Game & World Builders</strong>
-                    <span class="tag">Coming Soon</span>
-                    On our roadmap: lore videos, cinematic moments, and UGC ecosystems for game worlds and virtual experiences — all powered by Verse.
-                </div>
-            </div>
-        </section>
-
-        <!-- WAITLIST FORM -->
-
-        <section class="waitlist-form" id="waitlistForm">
-            <h2>Join the Verse Waitlist</h2>
-            <p>Get early access, behind-the-scenes updates, and priority invites to our private beta.</p>
-
-            <form id="form">
-                <div class="form-group">
-                    <label for="name">Full Name *</label>
-                    <input type="text" id="name" name="name" required placeholder="Leon Scott">
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Email *</label>
-                    <input type="email" id="email" name="email" required placeholder="you@example.com">
-                </div>
-
-                <div class="form-group">
-                    <label for="role">I am a... *</label>
-                    <select id="role" name="role" required>
-                        <option value="">Select one</option>
-                        <option value="filmmaker">Filmmaker / Video Creator</option>
-                        <option value="musician">Musician / Music Producer</option>
-                        <option value="brand">Brand / Marketer</option>
-                        <option value="educator">Educator / Trainer</option>
-                        <option value="creator">Content Creator</option>
-                        <option value="entrepreneur">Entrepreneur</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="usecase">What would you create with Verse?</label>
-                    <input type="text" id="usecase" name="usecase" placeholder="e.g., Sci-fi series, music visuals, product ads">
-                </div>
-
-                <div class="form-group">
-                    <label for="linkedin">LinkedIn or Website (Optional)</label>
-                    <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/yourname">
-                </div>
-
-                <button type="submit" class="submit-btn" id="submitBtn">
-                    🚀 Join Early Access
-                </button>
-            </form>
-
-            <div class="success-message" id="successMessage">
-                <div class="success-icon">🎉</div>
-                <h3>You're On The List.</h3>
-                <p>Check your email for confirmation. We’ll reach out as we open the next beta cohort.</p>
-                <p style="margin-top: 10px; font-size: 0.85rem; color: #94a3b8;">
-                    You’ll also get early looks at the AI Actor Casting system, universe builder, and creator tools.
-                </p>
-            </div>
-        </section>
-
-        <!-- FOUNDER STORY -->
-
-        <section style="padding: 80px 20px; background: linear-gradient(180deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 41, 59, 0.6) 100%);">
-            <div style="max-width: 900px; margin: 0 auto;">
-                <h3 style="font-size: 2.5rem; margin-bottom: 30px; text-align: center; color: #f1f5f9;">
-                    Built By Creators, For Creators
-                </h3>
-
-                <div style="font-size: 1.1rem; line-height: 1.8; color: #e2e8f0; max-width: 800px; margin: 0 auto; text-align: center;">
-                    <p style="margin-bottom: 25px;">
-                        Verse was created because traditional filmmaking has been locked behind money,
-                        gatekeepers, and systems never designed for everyday storytellers. For decades,
-                        Hollywood decided who gets seen, who gets funded, and which stories matter.
-                        <strong style="color: #f1f5f9;">We're changing that.</strong>
-                    </p>
-
-                    <p style="margin-bottom: 25px;">
-                        Built by a forward-thinking, all-Black founding team — Leon Scott (CEO),
-                        Carlton Johnson (CFO), and Jay (CTO) — Verse is our answer to a lifetime of
-                        watching incredible ideas die on the vine simply because the tools, access,
-                        or budgets weren't there. We've lived on both sides of the camera: classrooms,
-                        boardrooms, creative studios, and communities full of voices waiting to be heard.
-                    </p>
-
-                    <p style="margin-bottom: 25px;">
-                        We believe the future of storytelling belongs to everyone. Verse is a
-                        <strong style="color: #60a5fa;">partnership between human creativity and AI execution</strong> —
-                        you direct, AI handles the crew you could never afford. Together, we break the
-                        chains of outdated systems and give every creator a studio of their own.
-                    </p>
-
-                    <p style="font-size: 1.15rem; font-weight: 500; color: #f1f5f9; margin-top: 35px; padding-top: 30px; border-top: 1px solid rgba(148, 163, 184, 0.2);">
-                        No gatekeepers. No permission needed.
-                        <br>
-                        <span style="color: #60a5fa;">Just your imagination — amplified by AI.</span>
-                        <br><br>
-                        <strong style="color: #a78bfa; font-size: 1.3rem;">Welcome to your studio.</strong>
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- FAQ -->
-
-        <section class="faq">
-            <h2 class="section-title">Questions You Might Have</h2>
-            <div class="faq-list">
-                <div class="faq-item">
-                    <h3>When does Verse launch?</h3>
-                    <p>We’re moving toward a private beta with a small group of creators and brands. Waitlist members get invited in waves.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>How much will it cost?</h3>
-                    <p>We’ll start with a free tier for experiments and paid tiers for heavy usage, teams, and studios. Pricing will be shared with early users first.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>What can I actually make with Verse?</h3>
-                    <p>Short films, pilots, trailers, music videos, UGC-style ads, course content, explainers, and more. If it’s visual storytelling, Verse should be able to help.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- FINAL CTA -->
-
-        <section class="final-cta">
-            <p>Ready to see what an AI-native studio feels like?</p>
-            <div style="text-align:center;">
-                <button onclick="document.getElementById('waitlistForm').scrollIntoView({behavior:'smooth'});">
-                    Join the Waitlist
-                </button>
-            </div>
-        </section>
-
-        <!-- FOOTER -->
-
-        <div class="footer">
-            <p>
-                Built by <a href="https://linkedin.com/in/leonscott" target="_blank" rel="noopener">Leon Scott</a>.
-                Questions? <a href="mailto:hello@verse.cx">hello@verse.cx</a>
-            </p>
-            <p style="margin-top: 6px;">
-                © 2025 Verse. All rights reserved.
-            </p>
-        </div>
-
+    <div class="logo">
+      <img src="verse-logo.png" alt="Verse Logo">
+      <h1>VERSE</h1>
     </div>
 
-    <script>
-        // Fake waitlist counter (simple FOMO)
-        (function () {
-            const base = 1849;
-            const extra = Math.floor(Math.random() * 120);
-            const el = document.getElementById('waitlistCounter');
-            if (el) el.textContent = "🔥 " + (base + extra);
-        })();
+    <p class="tagline">
+      An AI-native creative platform where humanity and AI co-direct.
+    </p>
 
-        // Waitlist form handler
-        document.getElementById('form').addEventListener('submit', function (e) {
-            e.preventDefault();
+    <div class="hero">
+      <h2>
+        Your <span class="highlight">AI Film &amp; Story Studio</span>.<br>
+        No Crew. No Big Budget.
+      </h2>
+      <p>
+        Turn ideas into films, music videos, and branded content in minutes.
+        Script, cast, direct, and edit with AI — all inside Verse.
+      </p>
+      <p class="hero-note">
+        Built for creators, founders, educators, and brands who want studio-quality output
+        without studio-sized teams.
+      </p>
+    </div>
 
-            const submitBtn = document.getElementById('submitBtn');
-            const form = document.getElementById('form');
-            const successMessage = document.getElementById('successMessage');
+    <div class="social-proof">
+      <span id="waitlistCounter">🔥 1,849</span> creators have discovered Verse this month.
+    </div>
 
-            submitBtn.disabled = true;
-            submitBtn.textContent = '⏳ Joining...';
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-number">10m</div>
+        <div class="stat-label">Average time to first video</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">$0</div>
+        <div class="stat-label">Production costs to get started</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">∞</div>
+        <div class="stat-label">Stories &amp; universes you can create</div>
+      </div>
+    </div>
 
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                role: document.getElementById('role').value,
-                usecase: document.getElementById('usecase').value,
-                linkedin: document.getElementById('linkedin').value,
-                timestamp: new Date().toISOString(),
-                source: 'waitlist_page'
-            };
+    <!-- DEMO VIDEO -->
 
-            console.log('Waitlist signup:', formData);
-            // TODO: send formData to your backend or Airtable/Sheets
+    <section class="demo-section">
+      <div class="section-kicker">Demo</div>
+      <h2 class="section-title">See Verse in Action</h2>
+      <p class="section-subtitle">
+        24-second montage showing how Verse transforms ideas into cinematic scenes.
+      </p>
 
-            setTimeout(() => {
-                form.style.display = 'none';
-                successMessage.classList.add('show');
-            }, 900);
-        });
-    </script>
+      <div class="demo-video-wrapper">
+        <iframe
+          src="https://www.youtube.com/embed/B4UFRhVolow?rel=0&modestbranding=1&controls=1"
+          title="Verse Demo"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <p class="demo-hint">
+        This preview was generated using early Verse tools. Full cinematic pipeline is coming.
+      </p>
+    </section>
+
+    <!-- FEATURES – 1 ROW OF 4 -->
+
+    <section>
+      <h2 class="section-title">Your Entire Studio in One Browser Tab</h2>
+      <p class="section-subtitle">
+        Verse combines AI tools into a single workflow so you’re not jumping between apps.
+      </p>
+
+      <div class="features">
+        <div class="feature">
+          <div class="feature-icon">🎬</div>
+          <h3>AI Director</h3>
+          <p>
+            Generate scripts, shot lists, and scene directions in your own voice —
+            from short-form content to full episodes.
+          </p>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">🧑‍🎤</div>
+          <h3>AI Actors &amp; Voices</h3>
+          <p>
+            Cast AI performers, clone voices, and experiment with different reads
+            instantly without scheduling talent.
+          </p>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">🎨</div>
+          <h3>Visual Story Engine</h3>
+          <p>
+            Create cinematic shots, camera angles, and worlds that match your script —
+            from lo-fi realism to stylized animation.
+          </p>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">📢</div>
+          <h3>Brand &amp; Launch Studio</h3>
+          <p>
+            Turn the same assets into trailers, ads, and social clips optimized for TikTok,
+            Instagram, YouTube, and more.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXAMPLE OUTPUTS -->
+
+    <section class="examples">
+      <h2 class="section-title">Made With Verse (Demo Concepts)</h2>
+      <p class="section-subtitle">
+        Example types of content your investors and early users will immediately understand.
+      </p>
+
+      <div class="example-grid">
+        <div class="example-card">
+          <div class="example-thumb neon-exodus"></div>
+          <div class="example-body">
+            <div class="example-title">“Neon Exodus” — Sci-Fi Short</div>
+            <div class="example-meta">
+              45s • Cinematic 2.39:1 • Generated in 8 minutes
+            </div>
+          </div>
+        </div>
+
+        <div class="example-card">
+          <div class="example-thumb artist-launch"></div>
+          <div class="example-body">
+            <div class="example-title">Artist Launch — Music Video</div>
+            <div class="example-meta">
+              30s • Country / pop performance + live-session edit
+            </div>
+          </div>
+        </div>
+
+        <div class="example-card">
+          <div class="example-thumb product-spotlight"></div>
+          <div class="example-body">
+            <div class="example-title">L.I.F.E. Drop — Brand Ad</div>
+            <div class="example-meta">
+              20s • Streetwear hero shot + motion graphics • Built for paid social &amp; email launches
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHO VERSE IS FOR – 2 x 4 GRID -->
+
+    <section class="audience-wrap">
+      <div class="audience-kicker">Who It Serves</div>
+      <h2 class="audience-title">Who Verse Is For</h2>
+      <p class="audience-subtitle">
+        If video or storytelling drives your work, Verse is your studio.
+      </p>
+
+      <div class="audience-grid">
+        <div class="audience-card">
+          <strong>Creators &amp; Filmmakers</strong>
+          Pitch pilots, build universes, and ship proof-of-concept episodes without renting a single camera.
+        </div>
+
+        <div class="audience-card">
+          <strong>Musicians &amp; Performers</strong>
+          Turn tracks into performance visuals, lyric videos, and live-session edits that feel like full productions.
+        </div>
+
+        <div class="audience-card">
+          <strong>Founders &amp; Brands</strong>
+          Explain products, launch drops, and test creative with studio-quality content that you own end-to-end.
+        </div>
+
+        <div class="audience-card">
+          <strong>Educators &amp; Trainers</strong>
+          Build courses, explainers, and scenario videos where AI actors play out your lessons and real-world conflicts.
+        </div>
+
+        <div class="audience-card">
+          <strong>Live Hosts &amp; Podcasters</strong>
+          Generate show opens, highlight reels, and promo snippets for live streams, panels, and audio-first content.
+        </div>
+
+        <div class="audience-card">
+          <strong>Agencies &amp; Studios</strong>
+          Prototype ideas, pitch concepts, and deliver fast-turnaround social edits for clients without spinning up full crews.
+        </div>
+
+        <div class="audience-card">
+          <strong>Nonprofits &amp; Community Orgs</strong>
+          Tell origin stories, impact narratives, and campaign videos that reach donors and communities without big production budgets.
+        </div>
+
+        <div class="audience-card">
+          <span class="coming-soon-label">Coming Soon</span>
+          <strong>Game &amp; World Builders</strong>
+          On our roadmap: lore videos, cinematic moments, and UGC ecosystems for game worlds and virtual experiences — all powered by Verse.
+        </div>
+      </div>
+    </section>
+
+    <!-- WAITLIST FORM -->
+
+    <section class="waitlist-form" id="waitlistForm">
+      <h2>Join the Verse Waitlist</h2>
+      <p>Get early access, behind-the-scenes updates, and priority invites to our private beta.</p>
+
+      <form id="form">
+        <div class="form-group">
+          <label for="name">Full Name *</label>
+          <input type="text" id="name" name="name" required placeholder="Leon Scott">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required placeholder="you@example.com">
+        </div>
+
+        <div class="form-group">
+          <label for="role">I am a... *</label>
+          <select id="role" name="role" required>
+            <option value="">Select one</option>
+            <option value="filmmaker">Filmmaker / Video Creator</option>
+            <option value="musician">Musician / Music Producer</option>
+            <option value="brand">Brand / Marketer</option>
+            <option value="educator">Educator / Trainer</option>
+            <option value="creator">Content Creator</option>
+            <option value="entrepreneur">Entrepreneur</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="usecase">What would you create with Verse?</label>
+          <input type="text" id="usecase" name="usecase" placeholder="e.g., sci-fi series, music visuals, product ads">
+        </div>
+
+        <div class="form-group">
+          <label for="linkedin">LinkedIn or Website (Optional)</label>
+          <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/yourname">
+        </div>
+
+        <button type="submit" class="submit-btn" id="submitBtn">
+          🚀 Join Early Access
+        </button>
+      </form>
+
+      <div class="success-message" id="successMessage">
+        <div class="success-icon">🎉</div>
+        <h3>You're On The List.</h3>
+        <p>Check your email for confirmation. We’ll reach out as we open the next beta cohort.</p>
+        <p style="margin-top: 10px; font-size: 0.85rem; color: #94a3b8;">
+          You’ll also get early looks at the AI Actor Casting system, universe builder, and creator tools.
+        </p>
+      </div>
+    </section>
+
+    <!-- FOUNDER STORY -->
+
+    <section style="padding: 80px 20px; background: linear-gradient(180deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 41, 59, 0.6) 100%);">
+      <div style="max-width: 900px; margin: 0 auto;">
+        <h3 style="font-size: 2.5rem; margin-bottom: 30px; text-align: center; color: #f1f59;">Built By Creators, For Creators</h3>
+
+        <div style="font-size: 1.1rem; line-height: 1.8; color: #e2e8f0; max-width: 800px; margin: 0 auto; text-align: center;">
+          <p style="margin-bottom: 25px;">
+            Verse was created because traditional filmmaking has been locked behind money,
+            gatekeepers, and systems never designed for everyday storytellers. For decades,
+            Hollywood decided who gets seen, who gets funded, and which stories matter.
+            <strong style="color: #f1f5f9;"> We're changing that.</strong>
+          </p>
+
+          <p style="margin-bottom: 25px;">
+            Built by a forward-thinking, all-Black founding team — Leon Scott (CEO),
+            Carlton Johnson (CFO), and Jay Jones (CTO) — Verse is our answer to a lifetime of
+            watching incredible ideas die on the vine simply because the tools, access,
+            or budgets weren't there. We've lived on both sides of the camera: classrooms,
+            boardrooms, creative studios, and communities full of voices waiting to be heard.
+          </p>
+
+          <p style="margin-bottom: 25px;">
+            We believe the future of storytelling belongs to everyone. Verse is a
+            <strong style="color: #60a5fa;"> partnership between human creativity and AI execution</strong> —
+            you direct, AI handles the crew you could never afford. Together, we break the
+            chains of outdated systems and give every creator a studio of their own.
+          </p>
+
+          <p style="font-size: 1.15rem; font-weight: 500; color: #f1f5f9; margin-top: 35px; padding-top: 30px; border-top: 1px solid rgba(148, 163, 184, 0.2);">
+            No gatekeepers. No permission needed.<br>
+            <span style="color: #60a5fa;">Just your imagination — amplified by AI.</span><br><br>
+            <strong style="color: #a78bfa; font-size: 1.3rem;">Welcome to your studio.</strong>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+
+    <section class="faq">
+      <h2 class="section-title">Questions You Might Have</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3>When does Verse launch?</h3>
+          <p>
+            We’re moving toward a private beta with a small group of creators and brands.
+            Waitlist members get invited in waves.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3>How much will it cost?</h3>
+          <p>
+            We’ll start with a free tier for experiments and paid tiers for heavy usage, teams,
+            and studios. Pricing will be shared with early users first.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3>What can I actually make with Verse?</h3>
+          <p>
+            Short films, pilots, trailers, music videos, UGC-style ads, course content,
+            explainers, and more. If it’s visual storytelling, Verse should be able to help.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+
+    <section class="final-cta">
+      <p>Ready to see what an AI-native studio feels like?</p>
+      <div style="text-align:center;">
+        <button onclick="document.getElementById('waitlistForm').scrollIntoView({behavior:'smooth'});">
+          Join the Waitlist
+        </button>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+      <p>
+        Built by <a href="https://linkedin.com/in/leonscott" target="_blank" rel="noopener noreferrer">Leon Scott</a>.
+        Questions? <a href="mailto:hello@verse.cx">hello@verse.cx</a>
+      </p>
+      <p style="margin-top: 6px;">
+        © 2025 Verse. All rights reserved.
+      </p>
+    </div>
+
+  </div>
+
+  <script>
+    // Fake waitlist counter (simple FOMO)
+    (function () {
+      const base = 1849;
+      const extra = Math.floor(Math.random() * 120);
+      const el = document.getElementById("waitlistCounter");
+      if (el) el.textContent = "🔥 " + (base + extra);
+    })();
+
+    // Waitlist form handler
+    document.getElementById("form").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const submitBtn = document.getElementById("submitBtn");
+      const form = document.getElementById("form");
+      const successMessage = document.getElementById("successMessage");
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = "⏳ Joining...";
+
+      const formData = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        role: document.getElementById("role").value,
+        usecase: document.getElementById("usecase").value,
+        linkedin: document.getElementById("linkedin").value,
+        timestamp: new Date().toISOString(),
+        source: "waitlist_page",
+      };
+
+      console.log("Waitlist signup:", formData);
+      // TODO: send formData to your backend or Airtable/Sheets
+
+      setTimeout(() => {
+        form.style.display = "none";
+        successMessage.classList.add("show");
+      }, 900);
+    });
+  </script>
 </body>
 </html>
