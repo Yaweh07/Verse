@@ -3,18 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Verse - AI-Native Creative Platform | Join Waitlist</title>
+  <title>Verse – AI-Native Video Studio | Join Waitlist</title>
   <meta
     name="description"
-    content="Where humanity and AI co-direct. Create films, music, and content with AI. Join thousands of creators in early access."
+    content="Verse is a live beta AI video studio. Create 15–90s multi-scene clips, generate captions & thumbnails, and ship launch-ready content fast."
   />
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
 
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       background: radial-gradient(circle at top, #111827 0%, #020617 45%, #020617 100%);
@@ -23,1240 +19,235 @@
       padding: 20px;
       overflow-x: hidden;
     }
-
-    .container {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 40px 20px 80px;
-    }
-
-    /* HEADER / LOGO */
-
-    .logo {
-      text-align: center;
-      margin-bottom: 24px;
-    }
-
-    .logo img {
-      display: block;
-      margin: 0 auto 16px;
-      width: 120px;
-    }
-
+    .container { max-width: 1080px; margin: 0 auto; padding: 40px 20px 80px; }
+    .logo { text-align: center; margin-bottom: 24px; }
+    .logo img { width: 120px; margin-bottom: 16px; }
     .logo h1 {
       font-size: 3.2rem;
+      font-weight: 900;
       background: linear-gradient(135deg, #00e0ff, #7928ca);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      font-weight: 900;
-      letter-spacing: -1px;
     }
-
     .tagline {
+      text-align: center;
       font-size: 1.1rem;
       color: #94a3b8;
-      text-align: center;
       margin-bottom: 40px;
-      line-height: 1.6;
     }
-
-    /* HERO */
-
-    .hero {
-      text-align: center;
-      margin-bottom: 24px;
-    }
-
-    .hero h2 {
-      font-size: 2.6rem;
-      margin-bottom: 16px;
-      line-height: 1.25;
-    }
-
-    .hero .highlight {
-      background: linear-gradient(135deg, #00e0ff, #7928ca);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero p {
-      font-size: 1.05rem;
-      color: #cbd5e1;
-      margin-bottom: 18px;
-      line-height: 1.7;
-    }
-
-    .hero-note {
-      font-size: 0.9rem;
-      color: #64748b;
-      margin-bottom: 0;
-    }
-
-    /* SOCIAL PROOF / STATS */
+    .hero { text-align: center; margin-bottom: 30px; }
+    .hero h2 { font-size: 2.6rem; margin-bottom: 16px; }
+    .hero p { color: #cbd5e1; font-size: 1.05rem; line-height: 1.7; }
+    .hero-note { font-size: .9rem; color: #64748b; }
 
     .social-proof {
-      background: rgba(0, 224, 255, 0.05);
-      border: 1px solid rgba(0, 224, 255, 0.35);
-      border-radius: 999px;
-      padding: 10px 24px;
+      max-width: 420px;
       margin: 32px auto 42px;
-      text-align: center;
+      padding: 10px 24px;
+      border-radius: 999px;
+      border: 1px solid rgba(0,224,255,.35);
+      background: rgba(0,224,255,.05);
       display: flex;
-      align-items: center;
       justify-content: center;
       gap: 8px;
-      max-width: 420px;
-    }
-
-    .social-proof span {
-      color: #22c55e;
-      font-weight: 600;
-    }
-
-    .social-proof .pill-label {
-      color: #cbd5e1;
-      font-size: 0.9rem;
     }
 
     .stats {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3,1fr);
       gap: 18px;
-      margin-bottom: 40px;
+      margin-bottom: 50px;
     }
 
     .stat {
       text-align: center;
-      padding: 22px 16px;
-      background: rgba(15, 23, 42, 0.9);
+      padding: 22px;
       border-radius: 16px;
-      border: 1px solid rgba(148, 163, 184, 0.25);
+      background: rgba(15,23,42,.9);
+      border: 1px solid rgba(148,163,184,.25);
     }
 
     .stat-number {
       font-size: 2.2rem;
-      font-weight: bold;
+      font-weight: 700;
       background: linear-gradient(135deg, #00e0ff, #7928ca);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-bottom: 6px;
     }
 
-    .stat-label {
-      color: #94a3b8;
-      font-size: 0.9rem;
-    }
-
-    /* DEMO VIDEO */
-
-    .section-title {
-      font-size: 1.8rem;
-      margin-bottom: 10px;
-      text-align: center;
-    }
-
-    .section-subtitle {
-      font-size: 0.98rem;
-      color: #94a3b8;
-      text-align: center;
-      margin-bottom: 24px;
-    }
-
-    .demo-section {
-      margin-bottom: 56px;
-    }
+    .section-title { font-size: 1.8rem; text-align: center; margin-bottom: 10px; }
+    .section-subtitle { text-align: center; color: #94a3b8; margin-bottom: 26px; }
 
     .demo-video-wrapper {
       position: relative;
-      max-width: 100%;
-      margin: 0 auto;
-      padding-bottom: 56.25%; /* 16:9 */
-      height: 0;
+      padding-bottom: 56.25%;
       border-radius: 18px;
       overflow: hidden;
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      box-shadow: 0 24px 80px rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148,163,184,.35);
+      box-shadow: 0 24px 80px rgba(15,23,42,.9);
     }
 
-    .demo-video-wrapper iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
+    iframe { position: absolute; inset: 0; width: 100%; height: 100%; }
 
     .demo-hint {
       text-align: center;
-      margin-top: 10px;
-      font-size: 0.9rem;
+      font-size: .9rem;
       color: #64748b;
-    }
-
-    /* FEATURES – 1 ROW OF 4 */
-
-    .features-section {
-      margin-top: 70px;
-      margin-bottom: 56px;
+      margin-top: 10px;
     }
 
     .feature-grid-4 {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(4,1fr);
       gap: 20px;
+      margin: 60px 0;
     }
 
     .feature-card {
       background: #020617;
       border-radius: 24px;
       border: 1px solid #1e293b;
-      padding: 24px 22px 26px;
-      text-align: left;
-      transition: all 0.25s ease;
+      padding: 24px;
     }
 
-    .feature-card:hover {
-      border-color: #00e0ff;
-      box-shadow: 0 18px 50px rgba(15, 23, 42, 0.9);
-      transform: translateY(-3px);
-    }
-
-    .feature-icon {
-      font-size: 1.9rem;
-      margin-bottom: 12px;
-    }
-
-    .feature-card h3 {
-      font-size: 1.15rem;
-      margin-bottom: 8px;
-      color: #e5e7eb;
-    }
-
-    .feature-card p {
-      color: #94a3b8;
-      font-size: 0.96rem;
-      line-height: 1.6;
-    }
-
-    /* EXAMPLE OUTPUTS */
-
-    .examples {
-      margin-bottom: 64px;
-    }
-
-    .example-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 22px;
-    }
-
-    .example-card {
-      background: #020617;
-      border-radius: 24px;
-      border: 1px solid #1e293b;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      min-height: 260px;
-    }
-
-    .example-thumb {
-      position: relative;
-      height: 210px;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-
-    .example-thumb::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        180deg,
-        rgba(15, 23, 42, 0.1) 0%,
-        rgba(15, 23, 42, 0.55) 65%,
-        rgba(15, 23, 42, 0.9) 100%
-      );
-    }
-
-    .example-thumb.neon-exodus {
-      background-image: url("neon-exodus.jpg");
-      background-position: center center;
-    }
-
-    .example-thumb.artist-launch {
-      background-image: url("artist-launch.jpg");
-      background-position: center center;
-    }
-
-    .example-thumb.life-drop {
-      background-image: url("product-spotlight.jpg");
-      background-position: center 30%;
-    }
-
-    .example-body {
-      padding: 16px 18px 18px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .example-title {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
-    .example-meta {
-      font-size: 0.88rem;
-      color: #9ca3af;
-    }
-
-    /* WHO IT SERVES – 2 x 4 GRID */
-
-    .audience-section {
-      margin-top: 60px;
-      margin-bottom: 64px;
-    }
-
-    .audience-grid-4 {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 22px 22px;
-    }
-
-    .audience-card {
-      background: #020617;
-      border-radius: 24px;
-      border: 1px solid #1e293b;
-      padding: 22px 22px 24px;
-      font-size: 0.96rem;
-      line-height: 1.6;
-    }
-
-    .audience-card h3 {
-      font-size: 1.02rem;
-      margin-bottom: 8px;
-      color: #e5e7eb;
-    }
-
-    .audience-card p {
-      color: #cbd5e1;
-    }
-
-    .audience-card.coming-soon h3 {
-      font-size: 0.95rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #38bdf8;
-      margin-bottom: 10px;
-    }
-
-    .audience-card.coming-soon h3 br {
-      display: block;
-    }
-
-    .audience-card.coming-soon p {
-      color: #cbd5e1;
-    }
-
-    /* WAITLIST FORM */
+    .feature-card h3 { margin-bottom: 8px; }
+    .feature-card p { color: #94a3b8; line-height: 1.6; }
 
     .waitlist-form {
       background: #020617;
       border-radius: 24px;
-      padding: 28px 24px 30px;
-      box-shadow: 0 24px 80px rgba(15, 23, 42, 0.9);
-      margin-bottom: 60px;
+      padding: 30px;
       border: 1px solid #1e293b;
-    }
-
-    .waitlist-form h2 {
-      text-align: center;
-      margin-bottom: 8px;
-      font-size: 1.6rem;
-    }
-
-    .waitlist-form p {
-      text-align: center;
-      color: #94a3b8;
-      font-size: 0.95rem;
-      margin-bottom: 22px;
-    }
-
-    .form-group {
-      margin-bottom: 16px;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 6px;
-      color: #cbd5e1;
-      font-weight: 600;
-      font-size: 0.9rem;
-    }
-
-    .form-group input,
-    .form-group select {
-      width: 100%;
-      padding: 12px 13px;
-      background: #020617;
-      border: 1px solid #334155;
-      border-radius: 10px;
-      color: #fff;
-      font-size: 0.98rem;
-      transition: border-color 0.25s;
-    }
-
-    .form-group input:focus,
-    .form-group select:focus {
-      outline: none;
-      border-color: #00e0ff;
+      margin: 60px 0;
     }
 
     .submit-btn {
       width: 100%;
-      padding: 13px;
-      background: linear-gradient(135deg, #00e0ff, #7928ca);
-      border: none;
-      border-radius: 999px;
-      color: #fff;
-      font-size: 1.05rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      margin-top: 4px;
-    }
-
-    .submit-btn:hover:not(:disabled) {
-      transform: translateY(-1px);
-      box-shadow: 0 15px 40px rgba(0, 224, 255, 0.35);
-    }
-
-    .submit-btn:disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
-      box-shadow: none;
-      transform: none;
-    }
-
-    .success-message {
-      display: none;
-      background: rgba(34, 197, 94, 0.08);
-      border: 1px solid #22c55e;
-      border-radius: 14px;
-      padding: 20px;
-      text-align: center;
-      margin-top: 18px;
-    }
-
-    .success-message.show {
-      display: block;
-      animation: slideIn 0.4s;
-    }
-
-    .success-icon {
-      font-size: 2.4rem;
-      margin-bottom: 8px;
-    }
-
-    .success-message h3 {
-      color: #22c55e;
-      font-size: 1.2rem;
-      margin-bottom: 6px;
-    }
-
-    .success-message p {
-      color: #cbd5e1;
-      font-size: 0.95rem;
-    }
-
-    @keyframes slideIn {
-      from {
-        opacity: 0;
-        transform: translateY(10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* FOUNDER STORY & FAQ */
-
-    .founder,
-    .faq,
-    .final-cta {
-      margin-bottom: 44px;
-    }
-
-    .founder p {
-      max-width: 700px;
-      margin: 0 auto;
-      text-align: center;
-      color: #cbd5e1;
-      line-height: 1.7;
-      font-size: 0.98rem;
-    }
-
-    .faq-list {
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .faq-item {
-      margin-bottom: 14px;
-    }
-
-    .faq-item h3 {
-      font-size: 0.98rem;
-      margin-bottom: 4px;
-      color: #e5e7eb;
-    }
-
-    .faq-item p {
-      font-size: 0.9rem;
-      color: #9ca3af;
-      line-height: 1.5;
-    }
-
-    .final-cta p {
-      text-align: center;
-      color: #cbd5e1;
-      margin-bottom: 10px;
-    }
-
-    .final-cta button {
-      display: inline-block;
-      padding: 10px 22px;
-      border-radius: 999px;
-      border: none;
-      background: linear-gradient(135deg, #00e0ff, #7928ca);
-      color: #fff;
-      font-weight: 600;
-      cursor: pointer;
-      font-size: 0.98rem;
-    }
-
-    .final-cta button:hover {
-      box-shadow: 0 16px 45px rgba(15, 23, 42, 1);
-      transform: translateY(-1px);
-    }
-
-    /* FOOTER */
-
-    .footer {
-      text-align: center;
-      color: #6b7280;
-      padding-top: 26px;
-      border-top: 1px solid #1e293b;
-      font-size: 0.85rem;
-    }
-
-    .footer a {
-      color: #00e0ff;
-      text-decoration: none;
-    }
-
-    .footer a:hover {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 960px) {
-      .feature-grid-4 {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .audience-grid-4 {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 640px) {
-      .logo h1 {
-        font-size: 2.4rem;
-      }
-
-      .hero h2 {
-        font-size: 1.9rem;
-      }
-
-      .stats {
-        grid-template-columns: 1fr;
-      }
-
-      .feature-grid-4,
-      .audience-grid-4,
-      .example-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .container {
-        padding-top: 30px;
-      }
-    }
-
-    /* === THANK-YOU FULLSCREEN OVERLAY + SHARE BUTTONS === */
-
-    #thankYouScreen {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: radial-gradient(circle at 35% 20%, #7f29ff 0%, #06071A 50%, #000 100%);
-      color: #fff;
-      z-index: 9999;
-      padding: 40px 20px;
-      text-align: center;
-      overflow-y: auto;
-      animation: fadeIn 0.7s ease forwards;
-    }
-
-    #thankYouScreenInner {
-      max-width: 720px;
-      margin: 0 auto;
-    }
-
-    #thankYouScreen img {
-      width: 150px;
-      margin-bottom: 20px;
-      filter: drop-shadow(0 0 22px rgba(0,224,255,0.45));
-    }
-
-    #thankYouScreen h1 {
-      font-size: 2.6rem;
-      line-height: 1.2;
-      margin-bottom: 16px;
-      font-weight: 900;
-      background: linear-gradient(135deg, #00e0ff, #7c3aed);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    #thankYouScreen p {
-      font-size: 1.1rem;
-      color: #cbd5e1;
-      margin-bottom: 24px;
-      line-height: 1.7;
-    }
-
-    .thank-tagline {
-      font-size: 1.3rem;
-      font-weight: 600;
-      margin-bottom: 28px;
-      background: linear-gradient(135deg, #00e0ff, #a855f7);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .thank-buttons {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      max-width: 360px;
-      margin: 0 auto;
-    }
-
-    .copy-btn {
       padding: 14px;
       border-radius: 999px;
       border: none;
-      background: linear-gradient(135deg, #00e0ff, #7928ca);
+      background: linear-gradient(135deg,#00e0ff,#7928ca);
       color: #fff;
-      font-size: 1.05rem;
       font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .copy-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 18px 45px rgba(0,224,255,0.35);
-    }
-
-    .twitter-btn {
-      padding: 13px;
-      border-radius: 999px;
-      border: 2px solid #1d9bf0;
-      background: transparent;
-      color: #1d9bf0;
       font-size: 1.05rem;
-      font-weight: 600;
       cursor: pointer;
-      transition: all 0.2s ease;
     }
 
-    .twitter-btn:hover {
-      background: rgba(29,155,240,0.18);
-      transform: translateY(-2px);
+    .footer {
+      text-align: center;
+      font-size: .85rem;
+      color: #6b7280;
+      border-top: 1px solid #1e293b;
+      padding-top: 26px;
     }
 
-    .copied-text {
-      font-size: 0.9rem;
-      color: #22c55e;
-      margin-top: 4px;
-      display: none;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(1.02); }
-      to   { opacity: 1; transform: scale(1); }
-    }
-
-    @media (max-width: 640px) {
-      #thankYouScreen h1 {
-        font-size: 2.1rem;
-      }
-      .thank-tagline {
-        font-size: 1.15rem;
-      }
+    @media(max-width:900px){
+      .feature-grid-4,.stats{grid-template-columns:1fr}
     }
   </style>
 </head>
+
 <body>
+<div class="container">
 
-  <!-- FULLSCREEN THANK-YOU OVERLAY -->
-  <div id="thankYouScreen">
-    <div id="thankYouScreenInner">
-      <img src="verse-logo.png" alt="VerseCX Logo" />
-      <h1>The studio is yours now.<br />Your vision. Your universe.</h1>
-      <p>
-        You're officially on the Verse waitlist. We’ll send early feature drops, updates,
-        and private beta invites as we open new waves.
-      </p>
-      <div class="thank-tagline">
-        Share Verse with creators who should have a studio of their own.
-      </div>
-
-      <p style="font-size:0.95rem; color:#9ca3af; margin-bottom:20px;">
-        Follow us on Twitter (X): 
-        <a href="https://twitter.com/VerseCXApp" target="_blank" style="color:#38bdf8; text-decoration:none;">
-          @VerseCXApp
-        </a>
-      </p>
-
-      <div class="thank-buttons">
-        <button class="copy-btn" onclick="copyLink()">Copy waitlist link</button>
-        <span id="copiedMsg" class="copied-text">Link copied!</span>
-
-        <button class="twitter-btn" onclick="shareTwitter()">
-          Share on Twitter (X)
-        </button>
-      </div>
-    </div>
+  <div class="logo">
+    <img src="verse-logo.png" alt="Verse Logo" />
+    <h1>VERSE</h1>
   </div>
 
-  <!-- MAIN PAGE -->
-  <div class="container" id="mainPage">
-    <!-- HEADER / HERO -->
-    <div class="logo">
-      <img src="verse-logo.png" alt="Verse Logo" />
-      <h1>VERSE</h1>
-    </div>
+  <p class="tagline">
+    An AI-native video studio where humanity and AI collaborate.
+  </p>
 
-    <p class="tagline">
-      An AI-native creative platform where humanity and AI co-direct.
+  <div class="hero">
+    <h2>No Crew. No Big Budget.</h2>
+    <p>
+      Create 15–90 second multi-scene videos, promos, and branded clips in a guided AI workflow.
     </p>
+    <p class="hero-note">
+      Live beta — features expand in waves.
+    </p>
+  </div>
 
-    <div class="hero">
-      <h2>No Crew. No Big Budget.</h2>
+  <div class="social-proof">
+    <span id="waitlistCounter">🔥 1,900+</span>
+    <span>creators joined recently</span>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="stat-number">10m</div><div>to first video</div></div>
+    <div class="stat"><div class="stat-number">$0</div><div>to start</div></div>
+    <div class="stat"><div class="stat-number">∞</div><div>ideas possible</div></div>
+  </div>
+
+  <h2 class="section-title">See Verse in Action</h2>
+  <p class="section-subtitle">Early workflows and demo outputs</p>
+
+  <div class="demo-video-wrapper">
+    <iframe src="https://www.youtube.com/embed/B4UFRhVolow" allowfullscreen></iframe>
+  </div>
+
+  <p class="demo-hint">
+    Generated using early Verse tools. Some features shown are beta; others are coming soon.
+  </p>
+
+  <h2 class="section-title">Your Entire Studio in One Browser Tab</h2>
+  <p class="section-subtitle">Honest V1 capabilities</p>
+
+  <div class="feature-grid-4">
+    <div class="feature-card">
+      <h3>🎬 Hollywood Studio (V1)</h3>
       <p>
-        Turn ideas into films, music videos, and branded content in minutes.
-        Script, cast, direct, and edit with AI — all inside Verse.
-      </p>
-      <p class="hero-note">
-        Built for creators, founders, educators, and brands who want studio-quality
-        output without studio-sized teams.
+        Create 15–90s multi-scene videos in a guided flow:
+        choose a format, describe your vision, select characters, style, and generate.
       </p>
     </div>
 
-    <div class="social-proof">
-      <span id="waitlistCounter">🔥 1,897</span>
-      <span class="pill-label">creators have discovered Verse this month.</span>
+    <div class="feature-card">
+      <h3>🎨 AI Content Studio</h3>
+      <p>
+        Generate captions and thumbnails optimized for TikTok, Instagram, and YouTube.
+      </p>
     </div>
 
-    <div class="stats">
-      <div class="stat">
-        <div class="stat-number">10m</div>
-        <div class="stat-label">Average time to first video</div>
-      </div>
-      <div class="stat">
-        <div class="stat-number">$0</div>
-        <div class="stat-label">Production costs to get started</div>
-      </div>
-      <div class="stat">
-        <div class="stat-number">∞</div>
-        <div class="stat-label">Stories & universes you can create</div>
-      </div>
+    <div class="feature-card">
+      <h3>📺 Verse Platform (Coming Soon)</h3>
+      <p>
+        Public video library and creator profiles are on the roadmap.
+        Early users help shape discovery and remix.
+      </p>
     </div>
 
-    <!-- DEMO VIDEO -->
-    <section class="demo-section">
-      <h2 class="section-title">See Verse in Action</h2>
-      <p class="section-subtitle">
-        24-second montage showing how Verse transforms ideas into cinematic scenes.
-      </p>
-
-      <div class="demo-video-wrapper">
-        <iframe
-          src="https://www.youtube.com/embed/B4UFRhVolow?rel=0&modestbranding=1&controls=1"
-          title="Verse Demo"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      </div>
-
-      <p class="demo-hint">
-        This preview was generated using early Verse tools. Full cinematic pipeline is coming.
-      </p>
-    </section>
-
-    <!-- FEATURES -->
-    <section class="features-section">
-      <h2 class="section-title">Your Entire Studio in One Browser Tab</h2>
-      <p class="section-subtitle">
-        Verse combines AI tools into a single workflow so you’re not jumping between apps.
-      </p>
-
-      <div class="feature-grid-4">
-        <div class="feature-card">
-          <div class="feature-icon">🎬</div>
-          <h3>AI Director</h3>
-          <p>
-            Generate scripts, shot lists, and scene directions in your own voice —
-            from short-form content to full episodes.
-          </p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">🧑‍🎤</div>
-          <h3>AI Actors & Voices</h3>
-          <p>
-            Cast AI performers, clone voices, and experiment with different reads
-            instantly without scheduling talent.
-          </p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">🎨</div>
-          <h3>Visual Story Engine</h3>
-          <p>
-            Create cinematic shots, camera angles, and worlds that match your script —
-            from lo-fi realism to stylized animation.
-          </p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">📢</div>
-          <h3>Brand & Launch Studio</h3>
-          <p>
-            Turn the same assets into trailers, ads, and social clips optimized for TikTok,
-            Instagram, YouTube, and more.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- EXAMPLE OUTPUTS -->
-    <section class="examples">
-      <h2 class="section-title">Made With Verse (Demo Concepts)</h2>
-      <p class="section-subtitle">
-        Example types of content your investors and early users will immediately understand.
-      </p>
-
-      <div class="example-grid">
-        <div class="example-card">
-          <div class="example-thumb neon-exodus"></div>
-          <div class="example-body">
-            <div class="example-title">“Neon Exodus” — Sci-Fi Short</div>
-            <div class="example-meta">
-              45s • Cinematic 2.39:1 • Generated in 8 minutes
-            </div>
-          </div>
-        </div>
-
-        <div class="example-card">
-          <div class="example-thumb artist-launch"></div>
-          <div class="example-body">
-            <div class="example-title">Country Artist Launch — Music Video</div>
-            <div class="example-meta">
-              30s • Live-set performance + lyric moments • TikTok + Reels ready
-            </div>
-          </div>
-        </div>
-
-        <div class="example-card">
-          <div class="example-thumb life-drop"></div>
-          <div class="example-body">
-            <div class="example-title">L.I.F.E. Drop — Brand Ad</div>
-            <div class="example-meta">
-              20s • Streetwear hero shot + motion graphics • Built for paid social & email launches
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- WHO IT SERVES -->
-    <section class="audience-section">
-      <h2 class="section-title">Who Verse Is For</h2>
-      <p class="section-subtitle">
-        If video or storytelling drives your work, Verse is your studio.
-      </p>
-
-      <div class="audience-grid-4">
-        <div class="audience-card">
-          <h3>Creators & Filmmakers</h3>
-          <p>
-            Pitch pilots, build universes, and ship proof-of-concept episodes
-            without renting a single camera.
-          </p>
-        </div>
-
-        <div class="audience-card">
-          <h3>Musicians & Performers</h3>
-          <p>
-            Turn tracks into performance visuals, lyric videos, and live-session
-            edits that feel like full productions.
-          </p>
-        </div>
-
-        <div class="audience-card">
-          <h3>Founders & Brands</h3>
-          <p>
-            Explain products, launch drops, and test creative with studio-quality
-            content that you own end-to-end.
-          </p>
-        </div>
-
-        <div class="audience-card">
-          <h3>Educators & Trainers</h3>
-          <p>
-            Build courses, explainers, and scenario videos where AI actors play out
-            your lessons and real-world conflicts.
-          </p>
-        </div>
-
-        <div class="audience-card">
-          <h3>Live Hosts & Podcasters</h3>
-          <p>
-            Generate show opens, highlight reels, and promo snippets for live streams,
-            panels, and audio-first content.
-          </p>
-        </div>
-
-        <div class="audience-card">
-          <h3>Agencies & Studios</h3>
-          <p>
-            Prototype ideas, pitch concepts, and deliver fast-turnaround social edits
-            for clients without spinning up full crews.
-          </p>
-        </div>
-
-        <div class="audience-card">
-          <h3>Nonprofits & Community Orgs</h3>
-          <p>
-            Tell origin stories, impact narratives, and campaign videos that reach donors
-            and communities without big production budgets.
-          </p>
-        </div>
-
-        <div class="audience-card coming-soon">
-          <h3>COMING SOON<br />Game & World Builders</h3>
-          <p>
-            On our roadmap: lore videos, cinematic moments, and UGC ecosystems for game
-            worlds and virtual experiences — all powered by Verse.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- WAITLIST FORM -->
-    <section class="waitlist-form" id="waitlistForm">
-      <h2>Join the Verse Waitlist</h2>
+    <div class="feature-card">
+      <h3>📢 Brand & Launch Studio</h3>
       <p>
-        Get early access, behind-the-scenes updates, and priority invites to our private beta.
+        Repurpose Verse outputs into ads, trailers, and social clips for drops and campaigns.
       </p>
-
-      <!-- Netlify form integration -->
-      <form
-        id="form"
-        name="waitlist"
-        method="POST"
-        data-netlify="true"
-        netlify-honeypot="bot-field"
-      >
-        <input type="hidden" name="form-name" value="waitlist" />
-
-        <!-- hidden bot trap -->
-        <p style="display:none;">
-          <label>Don’t fill this out <input name="bot-field" /></label>
-        </p>
-
-        <div class="form-group">
-          <label for="name">Full Name *</label>
-          <input type="text" id="name" name="name" required placeholder="Leon Scott" />
-        </div>
-
-        <div class="form-group">
-          <label for="email">Email *</label>
-          <input type="email" id="email" name="email" required placeholder="you@example.com" />
-        </div>
-
-        <div class="form-group">
-          <label for="role">I am a... *</label>
-          <select id="role" name="role" required>
-            <option value="">Select one</option>
-            <option value="filmmaker">Filmmaker / Video Creator</option>
-            <option value="musician">Musician / Music Producer</option>
-            <option value="brand">Brand / Marketer</option>
-            <option value="educator">Educator / Trainer</option>
-            <option value="creator">Content Creator</option>
-            <option value="entrepreneur">Entrepreneur</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="usecase">What would you create with Verse?</label>
-          <input
-            type="text"
-            id="usecase"
-            name="usecase"
-            placeholder="e.g., Sci-fi series, music visuals, product ads"
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="linkedin">LinkedIn or Website (Optional)</label>
-          <input
-            type="url"
-            id="linkedin"
-            name="linkedin"
-            placeholder="https://linkedin.com/in/yourname"
-          />
-        </div>
-
-        <button type="submit" class="submit-btn" id="submitBtn">
-          🚀 Join Early Access
-        </button>
-      </form>
-
-      <div class="success-message" id="successMessage">
-        <div class="success-icon">🎉</div>
-        <h3>You're On The List.</h3>
-        <p>Check your email for confirmation. We’ll reach out as we open the next beta cohort.</p>
-        <p
-          style="
-            margin-top: 10px;
-            font-size: 0.85rem;
-            color: #94a3b8;
-          "
-        >
-          You’ll also get early looks at the AI Actor Casting system, universe builder, and creator tools.
-        </p>
-      </div>
-    </section>
-
-    <!-- FOUNDER STORY -->
-    <section
-      style="
-        padding: 80px 20px;
-        background: linear-gradient(
-          180deg,
-          rgba(15, 23, 42, 0.8) 0%,
-          rgba(30, 41, 59, 0.6) 100%
-        );
-        border-radius: 24px;
-        border: 1px solid #1f2933;
-        margin-bottom: 56px;
-      "
-    >
-      <div style="max-width: 900px; margin: 0 auto;">
-        <h3
-          style="
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-            text-align: center;
-            color: #f1f5f9;
-          "
-        >
-          Built By Creators, For Creators
-        </h3>
-
-        <div
-          style="
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #e2e8f0;
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-          "
-        >
-          <p style="margin-bottom: 25px;">
-            Verse was created because traditional filmmaking has been locked behind money,
-            gatekeepers, and systems never designed for everyday storytellers. For decades,
-            Hollywood decided who gets seen, who gets funded, and which stories matter.
-            <strong style="color: #f1f5f9;">We're changing that.</strong>
-          </p>
-
-          <p style="margin-bottom: 25px;">
-            Built by a forward-thinking, all-Black founding team — Leon Scott (CEO),
-            Carlton Johnson (CFO), and Jay Jones (CTO) — Verse is our answer to a lifetime of
-            watching incredible ideas die on the vine simply because the tools, access,
-            or budgets weren't there. We've lived on both sides of the camera: classrooms,
-            boardrooms, creative studios, and communities full of voices waiting to be heard.
-          </p>
-
-          <p style="margin-bottom: 25px;">
-            We believe the future of storytelling belongs to everyone. Verse is a
-            <strong style="color: #60a5fa;">partnership between human creativity and AI execution</strong> —
-            you direct, AI handles the crew you could never afford. Together, we break the
-            chains of outdated systems and give every creator a studio of their own.
-          </p>
-
-          <p
-            style="
-              font-size: 1.15rem;
-              font-weight: 500;
-              color: #f1f5f9;
-              margin-top: 35px;
-              padding-top: 30px;
-              border-top: 1px solid rgba(148, 163, 184, 0.2);
-            "
-          >
-            No gatekeepers. No permission needed.
-            <br />
-            <span style="color: #60a5fa;">Just your imagination — amplified by AI.</span>
-            <br /><br />
-            <strong style="color: #a78bfa; font-size: 1.3rem;">Welcome to your studio.</strong>
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="faq">
-      <h2 class="section-title">Questions You Might Have</h2>
-      <div class="faq-list">
-        <div class="faq-item">
-          <h3>When does Verse launch?</h3>
-          <p>
-            We’re moving toward a private beta with a small group of creators and brands.
-            Waitlist members get invited in waves.
-          </p>
-        </div>
-        <div class="faq-item">
-          <h3>How much will it cost?</h3>
-          <p>
-            We’ll start with a free tier for experiments and paid tiers for heavy usage,
-            teams, and studios. Pricing will be shared with early users first.
-          </p>
-        </div>
-        <div class="faq-item">
-          <h3>What can I actually make with Verse?</h3>
-          <p>
-            Short films, pilots, trailers, music videos, UGC-style ads, course content,
-            explainers, and more. If it’s visual storytelling, Verse should be able to help.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- FINAL CTA -->
-    <section class="final-cta">
-      <p>Ready to see what an AI-native studio feels like?</p>
-      <div style="text-align: center;">
-        <button
-          onclick="document.getElementById('waitlistForm').scrollIntoView({ behavior: 'smooth' });"
-        >
-          Join the Waitlist
-        </button>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-    <div class="footer">
-      <p>
-        Built by
-        <a href="https://linkedin.com/in/leonscott" target="_blank">Leon Scott</a>.
-        Questions? <a href="mailto:hello@verse.cx">hello@verse.cx</a>
-      </p>
-      <p style="margin-top: 4px;">
-        Follow us on Twitter (X):
-        <a href="https://twitter.com/VerseCXApp" target="_blank">@VerseCXApp</a>
-      </p>
-      <p style="margin-top: 6px;">© 2025 Verse. All rights reserved.</p>
     </div>
   </div>
 
-  <script>
-    // Fake waitlist counter (simple FOMO)
-    (function () {
-      const base = 1849;
-      const extra = Math.floor(Math.random() * 120);
-      const el = document.getElementById("waitlistCounter");
-      if (el) el.textContent = "🔥 " + (base + extra);
-    })();
+  <section class="waitlist-form" id="waitlistForm">
+    <h2>Join the Verse Waitlist</h2>
+    <p>Early access rolls out in waves.</p>
 
-    // COPY LINK
-    function copyLink() {
-      navigator.clipboard.writeText("https://versecxwaitlist.netlify.app/");
-      const msg = document.getElementById("copiedMsg");
-      if (msg) {
-        msg.style.display = "block";
-        setTimeout(() => {
-          msg.style.display = "none";
-        }, 1800);
-      }
-    }
+    <form name="waitlist" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="waitlist" />
+      <input type="text" name="name" placeholder="Full Name" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <button class="submit-btn" type="submit">🚀 Join Early Access</button>
+    </form>
+  </section>
 
-    // SHARE TO TWITTER
-    function shareTwitter() {
-      const text =
-        encodeURIComponent(
-          "I just joined the @VerseCXApp waitlist — an AI-native creative studio where you create films, music videos, ads & universes straight from your browser. Join me:"
-        );
-      const url = encodeURIComponent("https://versecxwaitlist.netlify.app/");
-      window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, "_blank");
-    }
+  <div class="footer">
+    © 2025 Verse · Follow <a href="https://twitter.com/VerseCXApp" target="_blank">@VerseCXApp</a>
+  </div>
 
-    // FORM SUBMIT → SHOW THANK YOU SCREEN AND STILL SEND TO NETLIFY
-    const form = document.getElementById("form");
-    const mainPage = document.getElementById("mainPage");
-    const thankYouScreen = document.getElementById("thankYouScreen");
-    const submitBtn = document.getElementById("submitBtn");
+</div>
 
-    if (form) {
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
+<script>
+  document.getElementById("waitlistCounter").textContent =
+    "🔥 " + (1850 + Math.floor(Math.random() * 120));
+</script>
 
-        if (submitBtn) {
-          submitBtn.disabled = true;
-          submitBtn.textContent = "Joining...";
-        }
-
-        const formData = new FormData(form);
-
-        fetch("/", {
-          method: "POST",
-          body: formData
-        })
-          .then(() => {
-            if (mainPage) mainPage.style.display = "none";
-            if (thankYouScreen) thankYouScreen.style.display = "block";
-          })
-          .catch(() => {
-            if (submitBtn) {
-              submitBtn.disabled = false;
-              submitBtn.textContent = "🚀 Join Early Access";
-            }
-            alert("Something went wrong. Please try again.");
-          });
-      });
-    }
-  </script>
 </body>
 </html>
